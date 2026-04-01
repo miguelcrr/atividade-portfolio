@@ -1,32 +1,23 @@
-let aberto = false;
+async function carregarDados() {
 
-async function carregarProjetos() {
+    const resposta = await fetch("http://127.0.0.1:8000/dados");
+    const dados = await resposta.json();
+
+    document.getElementById("nome").textContent = dados.nome;
+    document.getElementById("titulo").textContent = dados.titulo;
+    document.getElementById("sobre").textContent = dados.sobre;
+    document.getElementById("escolaridade").textContent = dados.escolaridade;
+    document.getElementById("contato").textContent = dados.contato;
+
+    document.getElementById("foto").src = dados.foto;
+
     const lista = document.getElementById("lista-projetos");
 
-    // Se já estiver aberto → FECHA
-    if (aberto) {
-        lista.innerHTML = "";
-        aberto = false;
-        return;
-    }
-
-    // Se estiver fechado → ABRE
-    try {
-        const resposta = await fetch("http://127.0.0.1:8000/projetos");
-        const projetos = await resposta.json();
-
-        lista.innerHTML = "";
-
-        projetos.forEach(p => {
-            const li = document.createElement("li");
-            li.textContent = p;
-            lista.appendChild(li);
-        });
-
-        aberto = true;
-
-    } catch (erro) {
-        alert("Erro ao carregar projetos 😢");
-        console.log(erro);
-    }
+    dados.projetos.forEach(projeto => {
+        const li = document.createElement("li");
+        li.textContent = projeto;
+        lista.appendChild(li);
+    });
 }
+
+window.onload = carregarDados;

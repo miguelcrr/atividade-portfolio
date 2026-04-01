@@ -1,41 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Meu Portfólio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+
+<link rel="stylesheet" href="/style.css">
 <body>
 
     <header>
-        <h1>Miguel Correa Serraglio</h1>
-        <p>Estudante de Engenharia de Programação</p>
+        <h1 id="nome"></h1>
+        <p id="titulo"></p>
     </header>
 
     <section>
-        <img src="foto.jpg" alt="Minha foto">
+        <img id="foto" src="" alt="Minha foto">
     </section>
 
     <section>
         <h2>Sobre mim</h2>
-        <p>Sou estudante e estou aprendendo HTML, CSS, JavaScript e Python.</p>
+        <p id="sobre"></p>
     </section>
 
     <section>
         <h2>Escolaridade</h2>
-        <p>Curso superior incompleto</p>
+        <p id="escolaridade"></p>
     </section>
 
     <section>
         <h2>Projetos</h2>
-        <button onclick="carregarProjetos()">Carregar Projetos</button>
         <ul id="lista-projetos"></ul>
     </section>
 
     <footer>
-        <p>Contato: miguelcorreaserraglio@gmail.com</p>
+        <p id="contato"></p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-</html>
+</html> 

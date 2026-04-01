@@ -22,3 +22,15 @@ def projetos():
         "API com FastAPI",
         "Site pessoal"
     ]
+
+@app.get("/dados")
+def dados():
+    return {
+        "nome": "Miguel Correa Serraglio",
+        "titulo": "Estudante de Engenharia de Computação",
+        "sobre": "Sou estudante de engenharia de computação na Fastech e estou aprendendo desenvolvimento web com HTML, CSS, Python, JavaScript ",
+        "escolaridade": "Ensino superior em andamento",
+        "contato": "miguelcorreaserraglio@gmail.com",
+        "foto": "foto.jpg",
+        "projetos": ["IMC", "Elevador", "API", "Portfólio"]
+    }
