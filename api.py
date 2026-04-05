@@ -14,15 +14,6 @@ app.add_middleware(
 def home():
     return {"mensagem": "API funcionando!"}
 
-@app.get("/projetos")
-def projetos():
-    return [
-        "Calculadora de IMC (HTML, CSS, JS)",
-        "Sistema de elevador em Python",
-        "API com FastAPI",
-        "Site pessoal"
-    ]
-
 @app.get("/dados")
 def dados():
     return {
